@@ -7,6 +7,11 @@ app.set('json spaces', 2);
 
 app.use(express.static('public'))
 
+app.get('/cards/', function (req,res) {
+  console.log(req.query.card_number)
+  res.send(req.query.card_number)
+});
+
 app.listen(port, () => {
   console.log(`Listening on http://localhost:${port}`);
 });
